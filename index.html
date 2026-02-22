@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabriel Kaar | UGC Creator & Marketer</title>
+
+    <!-- Google Fonts: Inter & Outfit for a modern tech/creative feel -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Dynamic animated gradient background -->
+    <div class="bg-mesh"></div>
+
+    <main class="grid-container">
+
+        <!-- Bento Item 1: Main Intro (Span 2 columns, 2 rows on desktop) -->
+        <article class="bento-card hero-card">
+            <div class="card-content">
+                <div class="header-top">
+                    <div class="status">
+                        <span class="pulse-dot"></span> Open to Collabs
+                    </div>
+                </div>
+                <h1 class="hero-title">GABRIEL KAAR.</h1>
+                <h2 class="hero-subtitle">Digital Marketer, Photographer, Designer & UGC Creator</h2>
+                <p class="hero-desc">
+                    I craft high-end visual stories and ROI-driven marketing campaigns. I don't just make content; I
+                    build brands.
+                </p>
+                <div class="hero-actions">
+                    <a href="mailto:gabekaar@gmail.com" class="btn btn-primary">Let's Work <i
+                            class='bx bx-right-arrow-alt'></i></a>
+                    <a href="Gabriel_Kaar_Resume.pdf" download="Gabriel_Kaar_Resume.pdf"
+                        class="btn btn-secondary">Resume <i class='bx bx-download'></i></a>
+                </div>
+            </div>
+            <!-- Gradient Overlay for Contrast -->
+            <div class="hero-gradient"></div>
+            <!-- Profile pic -->
+            <img src="profile.jpg" alt="Gabriel Kaar" class="hero-image">
+        </article>
+
+        <!-- Bento Item 2: Experience -->
+        <article class="bento-card experience-card">
+            <h3>Experience</h3>
+            <ul class="role-list">
+                <li>
+                    <strong>Marketing Coordinator</strong>
+                    <span>D.B. Lunt Electrical Contractors</span>
+                </li>
+                <li>
+                    <strong>Social Media Manager</strong>
+                    <span>Terrace On the Green</span>
+                </li>
+                <li>
+                    <strong>Graphic Designer</strong>
+                    <span>Stetson University</span>
+                </li>
+                <li>
+                    <strong>Owner</strong>
+                    <span>Kaar Graphics</span>
+                </li>
+            </ul>
+        </article>
+
+        <!-- Bento Item 3: UGC Collage Slider -->
+        <article class="bento-card lifestyle-card">
+            <div class="ugc-collage">
+                <a href="https://www.tiktok.com/@kaargraphics/video/7608706186099166495" target="_blank"
+                    class="ugc-img-link">
+                    <img src="https://p16-common-sign.tiktokcdn-us.com/tos-useast8-p-0068-tx2/o4mRflECVACXCXVhET4QjxAEDfALFEAa2CAp4I~tplv-tiktokx-origin.image?dr=9636&x-expires=1771912800&x-signature=k9rCLcbrWbNNLZ9HY4OiBBpfwjg%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5"
+                        class="ugc-img" alt="UGC Frame 1">
+                    <div class="play-overlay"><i class='bx bx-play-circle'></i></div>
+                </a>
+                <a href="https://www.tiktok.com/@kaargraphics/video/7607948677092625694" target="_blank"
+                    class="ugc-img-link">
+                    <img src="https://p16-common-sign.tiktokcdn-us.com/tos-useast8-p-0068-tx2/ogIj1VQpx8jz3eGWCAeWLfAqEIQzkTJZIbKTuI~tplv-tiktokx-origin.image?dr=9636&x-expires=1771912800&x-signature=w9jFybGCzZBaennu%2FIORftSygCU%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5"
+                        class="ugc-img" alt="UGC Frame 2">
+                    <div class="play-overlay"><i class='bx bx-play-circle'></i></div>
+                </a>
+                <a href="https://www.tiktok.com/@kaargraphics/video/7599341512463306015" target="_blank"
+                    class="ugc-img-link">
+                    <img src="https://p19-common-sign.tiktokcdn-us.com/tos-useast8-p-0068-tx2/o4ft2VyAiABiAzAy5sB0K0IOuEARtSIjyiyCBD~tplv-tiktokx-origin.image?dr=9636&x-expires=1771912800&x-signature=XXK7cXFcbB0iuzT%2FUYsyERlOThY%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5"
+                        class="ugc-img" alt="UGC Frame 3">
+                    <div class="play-overlay"><i class='bx bx-play-circle'></i></div>
+                </a>
+            </div>
+            <div class="stat-badge">
+                <span class="number">100+</span>
+                <span class="label">Assets Created</span>
+            </div>
+            <!-- Navigation controls for collage -->
+            <div class="collage-nav">
+                <button id="prev-btn"><i class='bx bx-chevron-left'></i></button>
+                <button id="next-btn"><i class='bx bx-chevron-right'></i></button>
+            </div>
+        </article>
+
+        <!-- Bento Item 4: Socials Array -->
+        <article class="bento-card socials-card">
+            <h3>Connect</h3>
+            <div class="social-grid">
+                <a href="https://www.instagram.com/kaargraphics/" target="_blank" class="social-pill instagram">
+                    <i class='bx bxl-instagram'></i>
+                </a>
+                <a href="https://www.tiktok.com/@kaargraphics" target="_blank" class="social-pill tiktok">
+                    <i class='bx bxl-tiktok'></i>
+                </a>
+                <a href="https://x.com/kaargraphics" target="_blank" class="social-pill x-twitter">
+                    <i class='bx bxl-twitter'></i>
+                </a>
+                <a href="https://www.linkedin.com/in/gabekaar/" target="_blank" class="social-pill linkedin">
+                    <i class='bx bxl-linkedin'></i>
+                </a>
+            </div>
+        </article>
+
+        <!-- Bento Item 5: Callout / Portfolio Link -->
+        <article class="bento-card portfolio-card">
+            <div class="portfolio-content">
+                <h3>Explore My Full Portfolio</h3>
+                <p>See recent campaigns, design work, and sports marketing projects.</p>
+                <a href="https://kaargraphics.myportfolio.com" target="_blank" class="btn btn-glass">View Work <i
+                        class='bx bx-link-external'></i></a>
+            </div>
+            <div class="abstract-shape"></div>
+        </article>
+
+
+        <!-- Bento Item 6: Visual Identity -->
+        <article class="bento-card visual-card">
+            <div class="img-wrapper">
+                <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=800&auto=format&fit=crop"
+                    alt="Photography Setup - Sony and iPhone">
+            </div>
+            <div class="card-overlay">
+                <h3>Visual Identity</h3>
+                <p>Sony A7III & iPhone 17 Pro Max</p>
+            </div>
+        </article>
+
+    </main>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

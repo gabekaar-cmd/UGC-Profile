@@ -1,0 +1,616 @@
+:root {
+    /* Premium Ultra-Dark / Neon Aesthetic */
+    --bg-main: #060608;
+    --card-bg: rgba(20, 20, 24, 0.4);
+    --card-border: rgba(255, 255, 255, 0.06);
+    --card-hover-border: rgba(255, 255, 255, 0.15);
+
+    --text-primary: #ffffff;
+    --text-sec: #9494a0;
+
+    --accent-1: #2CFF05;
+    --accent-2: #2CFF05;
+    --accent-3: #2CFF05;
+
+    --font-head: 'Outfit', sans-serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    overflow-x: hidden;
+}
+
+/* Dynamic Mesh Background */
+.bg-mesh {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    background:
+        radial-gradient(circle at 15% 50%, rgba(59, 130, 246, 0.15), transparent 25%),
+        radial-gradient(circle at 85% 30%, rgba(139, 92, 246, 0.15), transparent 25%),
+        radial-gradient(circle at 50% 80%, rgba(236, 72, 153, 0.1), transparent 25%);
+    filter: blur(80px);
+    animation: pulse 15s ease-in-out infinite alternate;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+}
+
+/* Bento Grid System */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(200px, auto);
+    gap: 20px;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Base Card Styles */
+.bento-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 28px;
+    padding: 32px;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(20px);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+}
+
+.bento-card:hover {
+    border-color: var(--card-hover-border);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Card 1: Hero (Spans 2x2) */
+.hero-card {
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 2;
+    padding: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.card-content {
+    z-index: 2;
+    position: relative;
+    max-width: 60%;
+}
+
+.status {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 6px 14px;
+    border-radius: 40px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.pulse-dot {
+    width: 6px;
+    height: 6px;
+    background: #10b981;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #10b981;
+    animation: blink 2s infinite;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.4;
+    }
+}
+
+.hero-title {
+    font-family: var(--font-head);
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 12px;
+    letter-spacing: -0.03em;
+    background: linear-gradient(135deg, #fff, #a1a1aa);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+    font-family: var(--font-head);
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--accent-1);
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.hero-desc {
+    color: #e4e4eb;
+    margin-bottom: 32px;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    font-weight: 400;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.hero-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 28px;
+    border-radius: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-family: var(--font-head);
+    border: none;
+    outline: none;
+    white-space: nowrap;
+}
+
+.btn-primary {
+    background: var(--text-primary);
+    color: var(--bg-main);
+}
+
+.btn-primary:hover {
+    background: var(--accent-1);
+    color: #fff;
+    transform: scale(1.05);
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-primary);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(1.05);
+}
+
+.hero-image {
+    position: absolute;
+    right: -20px;
+    bottom: -20px;
+    width: 320px;
+    height: 380px;
+    object-fit: cover;
+    border-radius: 20px;
+    transform: rotate(5deg);
+    box-shadow: -10px 10px 30px rgba(0, 0, 0, 0.8);
+    transition: all 0.5s ease;
+    z-index: 1;
+    filter: contrast(1.1) saturate(1.1);
+}
+
+.hero-gradient {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(90deg, rgba(6, 6, 8, 0.95) 45%, rgba(6, 6, 8, 0) 100%);
+    z-index: 1;
+    pointer-events: none;
+    border-radius: 28px;
+}
+
+.hero-card:hover .hero-image {
+    transform: rotate(2deg) scale(1.05);
+}
+
+
+/* Media Cards (Visual & Lifestyle) */
+.visual-card {
+    padding: 0;
+    grid-column: 3 / span 2;
+    grid-row: 3;
+    position: relative;
+}
+
+.lifestyle-card {
+    padding: 0;
+    grid-column: 4;
+    grid-row: 1 / span 2;
+    position: relative;
+}
+
+.img-wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+.img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+.visual-card:hover img,
+.lifestyle-card:hover img {
+    transform: scale(1.1);
+}
+
+.card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 40px 24px 24px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+    z-index: 2;
+}
+
+.card-overlay h3 {
+    font-family: var(--font-head);
+    font-size: 1.4rem;
+    margin-bottom: 4px;
+}
+
+.card-overlay p {
+    color: var(--text-sec);
+    font-size: 0.9rem;
+}
+
+/* Stat Badge overlay */
+.stat-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 12px 16px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-badge .number {
+    font-family: var(--font-head);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent-3);
+}
+
+.stat-badge .label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #fff;
+}
+
+/* Socials Card */
+.socials-card {
+    grid-column: 3;
+    grid-row: 2;
+    padding: 24px;
+    justify-content: space-between;
+}
+
+.socials-card h3 {
+    font-family: var(--font-head);
+    font-size: 1.2rem;
+    margin-bottom: 16px;
+    color: var(--text-sec);
+}
+
+.social-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.social-pill {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 18px;
+    border-radius: 16px;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-pill i {
+    font-size: 1.8rem;
+}
+
+.social-pill:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-3px);
+}
+
+
+/* Portfolio Card */
+.portfolio-card {
+    grid-column: 1 / span 2;
+    grid-row: 3;
+    background: linear-gradient(135deg, rgba(88, 28, 135, 0.4) 0%, rgba(30, 58, 138, 0.4) 100%);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.portfolio-content {
+    z-index: 2;
+}
+
+.portfolio-content h3 {
+    font-family: var(--font-head);
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+}
+
+.portfolio-content p {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+    max-width: 80%;
+}
+
+.btn-glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+.btn-glass:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.abstract-shape {
+    position: absolute;
+    right: -20px;
+    bottom: -40px;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, var(--accent-2) 0%, transparent 70%);
+    opacity: 0.4;
+    filter: blur(20px);
+    z-index: 1;
+}
+
+/* Experience List Card */
+.experience-card {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+.experience-card h3 {
+    font-family: var(--font-head);
+    font-size: 1.2rem;
+    color: var(--text-sec);
+    margin-bottom: 16px;
+}
+
+.role-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.role-list li {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    border-left: 2px solid rgba(255, 255, 255, 0.1);
+    padding-left: 12px;
+    transition: border-color 0.3s ease;
+}
+
+.role-list li:hover {
+    border-color: var(--accent-1);
+}
+
+.role-list strong {
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.role-list span {
+    font-size: 0.8rem;
+    color: var(--text-sec);
+}
+
+/* UGC Collage / Swipe Area */
+.ugc-collage {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-radius: inherit;
+}
+
+.ugc-img-link {
+    min-width: 100%;
+    height: 100%;
+    position: relative;
+    display: block;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ugc-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.play-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4rem;
+    color: rgba(255, 255, 255, 0.8);
+    transition: transform 0.2s, color 0.2s;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.ugc-img-link:hover .play-overlay {
+    transform: translate(-50%, -50%) scale(1.1);
+    color: #fff;
+}
+
+.collage-nav {
+    position: absolute;
+    bottom: 24px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    z-index: 5;
+}
+
+.collage-nav button {
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+    transition: background 0.2s;
+}
+
+.collage-nav button:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+
+/* Responsive Breakpoints */
+@media (max-width: 1024px) {
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr);
+        padding: 0 16px;
+    }
+
+    .hero-card {
+        grid-column: span 3;
+    }
+
+    .portfolio-card {
+        grid-column: span 2;
+    }
+
+    .lifestyle-card {
+        display: none;
+    }
+
+    /* Hide one visually on medium screens to keep grid tight */
+}
+
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-card,
+    .visual-card,
+    .lifestyle-card,
+    .socials-card,
+    .portfolio-card,
+    .experience-card {
+        grid-column: span 1;
+        grid-row: auto;
+    }
+
+    .hero-card {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 32px 24px;
+    }
+
+    .hero-image {
+        position: relative;
+        width: 100%;
+        height: 250px;
+        right: 0;
+        bottom: 0;
+        transform: none;
+        margin-top: 32px;
+        border-radius: 16px;
+    }
+
+    .hero-card:hover .hero-image {
+        transform: none;
+    }
+
+    .card-content {
+        max-width: 100%;
+    }
+
+    .hero-title {
+        font-size: 2.8rem;
+    }
+
+    .visual-card,
+    .lifestyle-card {
+        min-height: 300px;
+    }
+}
